@@ -1,6 +1,5 @@
 import { test as setup } from "@playwright/test";
-import { clerkSetup } from "@clerk/testing/playwright";
 
 setup("clerk setup", async () => {
-  await clerkSetup();
+  // Auth is bypassed in tests via NEXT_PUBLIC_PLAYWRIGHT_TEST=true
 });
