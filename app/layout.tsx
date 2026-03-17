@@ -1,3 +1,4 @@
+import { ClerkProvider, Show, UserButton } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,7 +14,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ClerkProvider>
+          <Show when="signed-in">
+            <div className="fixed top-4 right-4 z-50">
+              <UserButton />
+            </div>
+          </Show>
+          {children}
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
