@@ -74,7 +74,15 @@ export default async function ClientDetailPage({ params }: { params: Promise<{ i
               {client.subscription_status}
             </span>
           </div>
-          <ClientActions client={client} />
+          <div className="flex gap-2 flex-wrap justify-end">
+            <Link
+              href={`/admin/clients/${client.id}/edit`}
+              className="text-sm px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition-colors"
+            >
+              Edit
+            </Link>
+            <ClientActions client={client} />
+          </div>
         </div>
 
         {/* Info grid */}
