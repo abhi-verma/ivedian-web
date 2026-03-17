@@ -45,7 +45,6 @@ export default function EditClientForm({ client }: { client: Client }) {
     }
 
     router.push(`/admin/clients/${client.id}`);
-    router.refresh();
   }
 
   return (
