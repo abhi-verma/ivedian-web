@@ -27,7 +27,7 @@ export default function Terms() {
         <p className="text-sm text-gray-600 mb-4">You must be at least 18 years old and have the legal authority to enter into these Terms on behalf of your business. By using the Service, you represent that you meet these requirements.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">3. Account and Access</h2>
-        <p className="text-sm text-gray-600 mb-4">Customers are provisioned by Ivedian and receive a unique dashboard token and webhook endpoint. You are responsible for keeping your credentials secure. You must notify us immediately at <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a> if you suspect unauthorized access.</p>
+        <p className="text-sm text-gray-600 mb-4">Customers are provisioned by Ivedian and receive a unique dashboard token and webhook endpoint. You are responsible for keeping your credentials secure. You must notify us immediately at <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a> if you suspect unauthorized access.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">4. Trial Period</h2>
         <p className="text-sm text-gray-600 mb-4">New Customers receive a 30-day free trial with a cap of 75 leads. No credit card is required to start. At the end of the trial period, the account will be paused until a paid plan is activated. We reserve the right to modify trial terms with reasonable notice.</p>
@@ -61,7 +61,7 @@ export default function Terms() {
         <p className="text-sm text-gray-600 mb-4">We retain all rights to the Service, including its software, design, and underlying technology. These Terms do not grant you any ownership interest in the Service.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">10. Termination</h2>
-        <p className="text-sm text-gray-600 mb-4">We may suspend or terminate your account at any time if we determine you have violated these Terms. You may request account termination at any time by contacting <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a>. Upon termination, your data will be deleted within 30 days.</p>
+        <p className="text-sm text-gray-600 mb-4">We may suspend or terminate your account at any time if we determine you have violated these Terms. You may request account termination at any time by contacting <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a>. Upon termination, your data will be deleted within 30 days.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">11. Disclaimers</h2>
         <p className="text-sm text-gray-600 mb-4">The Service is provided "as is" without warranties of any kind, express or implied. We do not guarantee that the Service will be uninterrupted, error-free, or that every lead will receive messages successfully. SMS delivery is subject to carrier conditions outside our control.</p>
@@ -84,7 +84,7 @@ export default function Terms() {
           Ivedian<br />
           5900 Balcones Drive Suite 100<br />
           Austin, TX 78731<br />
-          <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a>
+          <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a>
         </p>
       </div>
       <Footer />

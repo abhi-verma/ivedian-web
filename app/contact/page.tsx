@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="grid grid-cols-2 gap-6">
           <div className="border border-gray-200 rounded-xl p-6">
             <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Email</h3>
-            <a href="mailto:hello@ivedian.com" className="text-sm text-blue-600 hover:underline">hello@ivedian.com</a>
+            <a href="mailto:info@ivedian.com" className="text-sm text-blue-600 hover:underline">info@ivedian.com</a>
           </div>
           <div className="border border-gray-200 rounded-xl p-6">
             <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Response time</h3>

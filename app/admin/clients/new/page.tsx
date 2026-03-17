@@ -62,10 +62,11 @@ export default function NewClientPage() {
             { name: "twilio_phone_number", label: "Twilio phone number", type: "text", required: true, placeholder: "+18883945105" },
           ].map((field) => (
             <div key={field.name}>
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">
+              <label htmlFor={field.name} className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">
                 {field.label}{field.required && <span className="text-red-400 ml-1">*</span>}
               </label>
               <input
+                id={field.name}
                 name={field.name}
                 type={field.type}
                 required={field.required}

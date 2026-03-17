@@ -22,7 +22,7 @@ export default function Privacy() {
           5900 Balcones Drive Suite 100<br />
           Austin, TX 78731<br />
           United States<br />
-          <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a>
+          <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a>
         </p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">2. Information We Collect</h2>
@@ -66,13 +66,13 @@ export default function Privacy() {
         </ul>
 
         <h2 className="text-lg font-bold mt-10 mb-3">5. Data Retention</h2>
-        <p className="text-sm text-gray-600 mb-4">We retain lead data for as long as the associated business customer account is active. When an account is closed, lead data is deleted within 30 days. Business customers may request earlier deletion by contacting us at <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a>.</p>
+        <p className="text-sm text-gray-600 mb-4">We retain lead data for as long as the associated business customer account is active. When an account is closed, lead data is deleted within 30 days. Business customers may request earlier deletion by contacting us at <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a>.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">6. Data Security</h2>
         <p className="text-sm text-gray-600 mb-4">We store data in a cloud-hosted PostgreSQL database (Supabase). Access is restricted to authorized personnel and automated systems. We use HTTPS for all data in transit. We do not store full payment card numbers.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">7. Your Rights</h2>
-        <p className="text-sm text-gray-600 mb-4">Depending on your location, you may have the right to access, correct, or delete personal information we hold about you. To make a request, contact us at <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a>. We will respond within 30 days.</p>
+        <p className="text-sm text-gray-600 mb-4">Depending on your location, you may have the right to access, correct, or delete personal information we hold about you. To make a request, contact us at <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a>. We will respond within 30 days.</p>
 
         <h2 className="text-lg font-bold mt-10 mb-3">8. Children's Privacy</h2>
         <p className="text-sm text-gray-600 mb-4">Our Service is not directed to individuals under the age of 18. We do not knowingly collect personal information from children.</p>
@@ -86,7 +86,7 @@ export default function Privacy() {
           Ivedian<br />
           5900 Balcones Drive Suite 100<br />
           Austin, TX 78731<br />
-          <a href="mailto:hello@ivedian.com" className="text-blue-600 hover:underline">hello@ivedian.com</a>
+          <a href="mailto:info@ivedian.com" className="text-blue-600 hover:underline">info@ivedian.com</a>
         </p>
       </div>
       <Footer />

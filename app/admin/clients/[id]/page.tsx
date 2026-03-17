@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { apiFetch } from "@/lib/api";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import ClientActions from "./ClientActions";
 
 type Client = {
@@ -46,12 +49,22 @@ const leadStatusColors: Record<string, string> = {
   nurture_complete: "bg-gray-100 text-gray-500",
 };
 
-export default async function ClientDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const [client, leads]: [Client, Lead[]] = await Promise.all([
-    apiFetch(`/admin/clients/${id}`),
-    apiFetch(`/admin/clients/${id}/leads`),
-  ]);
+export default function ClientDetailPage() {
+  const { id } = useParams<{ id: string }>();
+  const [client, setClient] = useState<Client | null>(null);
+  const [leads, setLeads] = useState<Lead[]>([]);
+
+  useEffect(() => {
+    Promise.all([
+      fetch(`/api/admin/clients/${id}`).then((r) => r.json()),
+      fetch(`/api/admin/clients/${id}/leads`).then((r) => r.json()),
+    ]).then(([c, l]) => {
+      setClient(c);
+      setLeads(l);
+    });
+  }, [id]);
+
+  if (!client) return null;
 
   const dashboardUrl = `https://web-production-5a37a.up.railway.app/dashboard/${client.dashboard_token}`;
 

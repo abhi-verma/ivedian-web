@@ -1,6 +1,9 @@
-import { apiFetch } from "@/lib/api";
-import EditClientForm from "./EditClientForm";
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import EditClientForm from "./EditClientForm";
 
 type Client = {
   id: number;
@@ -11,9 +14,17 @@ type Client = {
   booking_link: string;
 };
 
-export default async function EditClientPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const client: Client = await apiFetch(`/admin/clients/${id}`);
+export default function EditClientPage() {
+  const { id } = useParams<{ id: string }>();
+  const [client, setClient] = useState<Client | null>(null);
+
+  useEffect(() => {
+    fetch(`/api/admin/clients/${id}`)
+      .then((r) => r.json())
+      .then(setClient);
+  }, [id]);
+
+  if (!client) return null;
 
   return (
     <div className="min-h-screen bg-gray-50">

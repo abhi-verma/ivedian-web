@@ -1,6 +1,11 @@
 import { apiFetch } from "@/lib/api";
 import { NextResponse } from "next/server";
 
+export async function GET() {
+  const data = await apiFetch("/admin/clients");
+  return NextResponse.json(data);
+}
+
 export async function POST(req: Request) {
   const body = await req.json();
   try {

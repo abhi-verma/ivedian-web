@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { apiFetch } from "@/lib/api";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
 type Message = {
   id: number;
@@ -21,9 +24,21 @@ const statusColors: Record<string, string> = {
   skipped: "bg-gray-100 text-gray-500",
 };
 
-export default async function LeadMessagesPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const messages: Message[] = await apiFetch(`/admin/leads/${id}/messages`);
+export default function LeadMessagesPage() {
+  const { id } = useParams<{ id: string }>();
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch(`/api/admin/leads/${id}/messages`)
+      .then((r) => r.json())
+      .then((data) => {
+        setMessages(data);
+        setLoaded(true);
+      });
+  }, [id]);
+
+  if (!loaded) return null;
 
   return (
     <div className="min-h-screen bg-gray-50">
