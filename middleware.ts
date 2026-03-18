@@ -1,10 +1,11 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
 const isAdminRoute = createRouteMatcher(['/admin(.*)'])
+const isDashboardRoute = createRouteMatcher(['/dashboard(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isAdminRoute(req)) {
-    if (process.env.NEXT_PUBLIC_PLAYWRIGHT_TEST === 'true') return;
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_TEST === 'true') return;
+  if (isAdminRoute(req) || isDashboardRoute(req)) {
     await auth.protect()
   }
 })
