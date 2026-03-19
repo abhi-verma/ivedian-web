@@ -105,7 +105,12 @@ export default function ClientDetailPage() {
 
   async function handleRemoveMember(memberId: number) {
     if (!confirm("Remove this member's dashboard access?")) return;
-    await fetch(`/api/admin/clients/${id}/members/${memberId}`, { method: "DELETE" });
+    const res = await fetch(`/api/admin/clients/${id}/members/${memberId}`, { method: "DELETE" });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      alert(err.detail ?? "Failed to remove member");
+      return;
+    }
     loadMembers();
   }
 
