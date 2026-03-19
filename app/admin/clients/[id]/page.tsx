@@ -68,7 +68,7 @@ export default function ClientDetailPage() {
   const loadMembers = () =>
     fetch(`/api/admin/clients/${id}/members`)
       .then((r) => r.json())
-      .then(setMembers);
+      .then((data) => { if (Array.isArray(data)) setMembers(data); });
 
   useEffect(() => {
     Promise.all([
@@ -111,7 +111,7 @@ export default function ClientDetailPage() {
 
   if (!client) return null;
 
-  const dashboardUrl = `https://web-production-5a37a.up.railway.app/dashboard/${client.dashboard_token}`;
+  const dashboardUrl = `https://www.ivedian.com/dashboard`;
 
   return (
     <div className="min-h-screen bg-gray-50">
