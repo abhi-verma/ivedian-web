@@ -3,6 +3,7 @@ import { apiFetch } from "@/lib/api";
 import ClientActions from "./ClientActions";
 import MembersSection from "./MembersSection";
 
+export const runtime = 'edge';
 export const revalidate = 30;
 
 type Client = {
