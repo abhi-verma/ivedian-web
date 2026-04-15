@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api";
 
 type Client = {
   id: number;
@@ -33,21 +31,11 @@ const statusColors: Record<string, string> = {
   churned: "bg-red-100 text-red-700",
 };
 
-export default function AdminPage() {
-  const [clients, setClients] = useState<Client[]>([]);
-  const [metrics, setMetrics] = useState<Metrics | null>(null);
-
-  useEffect(() => {
-    Promise.all([
-      fetch("/api/admin/clients").then((r) => r.json()),
-      fetch("/api/admin/metrics").then((r) => r.json()),
-    ]).then(([c, m]) => {
-      setClients(c);
-      setMetrics(m);
-    });
-  }, []);
-
-  if (!metrics) return null;
+export default async function AdminPage() {
+  const [clients, metrics] = await Promise.all([
+    apiFetch("/admin/clients") as Promise<Client[]>,
+    apiFetch("/admin/metrics") as Promise<Metrics>,
+  ]);
 
   return (
     <div className="min-h-screen bg-gray-50">
