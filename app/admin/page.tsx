@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { apiFetch } from "@/lib/api";
 
-export const runtime = 'edge';
 export const revalidate = 30;
 
 type Client = {
