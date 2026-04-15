@@ -8,5 +8,7 @@ export async function POST(_req: Request, { params }: { params: Promise<{ id: st
   revalidatePath(`/api/admin/clients/${id}`);
   revalidatePath("/api/admin/clients");
   revalidatePath("/api/admin/metrics");
+  revalidatePath(`/admin/clients/${id}`);
+  revalidatePath("/admin");
   return NextResponse.json(data);
 }

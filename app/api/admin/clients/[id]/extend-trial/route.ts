@@ -8,5 +8,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const data = await apiFetch(`/admin/clients/${id}/extend-trial`, { method: "POST", body: JSON.stringify(body) });
   revalidatePath(`/api/admin/clients/${id}`);
   revalidatePath("/api/admin/clients");
+  revalidatePath(`/admin/clients/${id}`);
+  revalidatePath("/admin");
   return NextResponse.json(data);
 }

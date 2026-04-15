@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { apiFetch } from "@/lib/api";
 
+export const revalidate = 30;
+
 type Client = {
   id: number;
   business_name: string;

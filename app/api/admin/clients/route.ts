@@ -15,6 +15,7 @@ export async function POST(req: Request) {
     const data = await apiFetch("/admin/activate-client", { method: "POST", body: JSON.stringify(body) });
     revalidatePath("/api/admin/clients");
     revalidatePath("/api/admin/metrics");
+    revalidatePath("/admin");
     return NextResponse.json(data);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";

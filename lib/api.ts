@@ -7,10 +7,11 @@ const adminHeaders = {
 };
 
 export async function apiFetch(path: string, init?: RequestInit) {
+  const method = (init?.method ?? "GET").toUpperCase();
   const res = await fetch(`${BASE}${path}`, {
     ...init,
     headers: { ...adminHeaders, ...(init?.headers ?? {}) },
-    cache: "no-store",
+    ...(method === "GET" ? {} : { cache: "no-store" as const }),
   });
   if (!res.ok) {
     const text = await res.text();

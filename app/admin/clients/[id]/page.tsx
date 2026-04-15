@@ -3,6 +3,8 @@ import { apiFetch } from "@/lib/api";
 import ClientActions from "./ClientActions";
 import MembersSection from "./MembersSection";
 
+export const revalidate = 30;
+
 type Client = {
   id: number;
   business_name: string;
